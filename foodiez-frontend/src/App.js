@@ -4,6 +4,7 @@ import ButtonDemo from "./Components/ButtonDemo";
 import { Typography } from "@material-ui/core";
 import { observer } from "mobx-react";
 import NavBar from "./Components/NavBar";
+import SignUp from "./Components/SignUp";
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <Typography variant={"h4"} color={"primary"} align={"center"}>
         "A recipe has no soul. You, as the cook, must bring soul to the recipe."
       </Typography>
+      < SignUp />
       
       <ButtonDemo />
     </div>
