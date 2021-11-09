@@ -8,9 +8,10 @@ import { TextField } from "@mui/material";
 import { useFormControl } from "@mui/material/FormControl";
 import { spacing } from '@mui/system';
 import authStore from "../Stores/authStore";
+import SignInButton from "./SignInButton";
 import { Link } from "react-router-dom";
-import SignUpButton from "./SignUpButton";
 import { observer } from "mobx-react";
+
 
 const style = {
   position: "absolute",
@@ -24,11 +25,11 @@ const style = {
   p: 7,
   mx: 'auto',
   m: 1,
+  
 
 };
 
-function SignUp () 
-{
+function SignIn() {
   const [user, setUser] = useState({
     username: "",
     password: "",
@@ -36,14 +37,13 @@ function SignUp ()
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    authStore.signup(user);
-    handleClose();
+    authStore.signin(user);
+    // closeModal();
   }
 
     const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
-
 
     const handleChange = (event) =>
       setUser({ ...user, [event.target.name]: event.target.value });
@@ -51,12 +51,11 @@ function SignUp ()
 
     return (
       <div>
-        <Button 
-        onClick={handleOpen}
-        variant= {"contained"}
-        color={"secondary"}
-        
-        >Sign Up
+        <Button
+         onClick={handleOpen}
+         variant= {"contained"}
+         color={"secondary"}
+        >Sign In
         </Button>
         <Modal
           open={open}
@@ -74,37 +73,37 @@ function SignUp ()
             lineHeight="8"
             style={{marginBottom: "20px"}}
             >
-      
-              Sign Up.
-              Create your account
+              Sign In.
+              Please log-in.
               </Typography>
             <form onSubmit={handleSubmit}>
               <TextField
+                onChange={handleChange}
+                // value={user.username}
                 label="username"
                 name="username"
-              // value={user.username}
                 variant="outlined"
                 color="secondary"
                 required
-                onChange={handleChange}
               />
               <TextField
+                onChange={handleChange}
+                // value={user.password}
                 label="password"
                 name="password"
-                // value={user.password}
                 variant="outlined"
                 color="secondary"
                 required
-                onChange={handleChange}
               />
-              <Button
-              onClose={handleClose}
+              <Button 
+              // onClose={handleClose}
               type="submit" 
               color="secondary" 
               variant="contained"
               mx="auto"
               display="flex"
               style={{margin: "4px"}}
+
               >
                 Submit
               </Button>
@@ -115,5 +114,4 @@ function SignUp ()
     );
   };
 
-  export default observer(SignUp);
-
+  export default observer(SignIn);
