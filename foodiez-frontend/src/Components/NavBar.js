@@ -19,13 +19,17 @@ import { observer, Observer } from "mobx-react-lite";
 
 export default function NavBar() {
   return (
+
+
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color={"secondary"}>
         {authStore.user === null ? (
+
           <>
             <SignIn /> <SignUp />
           </>
         ) : (
+
           <Button 
           variant="contained" 
           onClick={authStore.signOut}
@@ -47,5 +51,6 @@ export default function NavBar() {
         </Toolbar>
       </AppBar>
     </Box>
+
   );
 }

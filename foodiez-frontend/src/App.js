@@ -4,6 +4,22 @@ import ButtonDemo from "./Components/ButtonDemo";
 import { Switch, Typography } from "@material-ui/core";
 import { observer } from "mobx-react";
 import NavBar from "./Components/NavBar";
+
+import CateList from './Components/CateList'
+
+function App() {
+  return (
+    <div className="App">
+      <NavBar/>
+
+      <CateList/>
+      {/* <h1>{title}</h1>
+      <Typography variant={"h4"} color={"primary"} align={"center"}>
+        "A recipe has no soul. You, as the cook, must bring soul to the recipe."
+      </Typography>
+      
+      <ButtonDemo /> */}
+
 import SignUp from "./Components/SignUp";
 import { Route } from "react-router";
 import { Link } from "react-router-dom";
@@ -43,6 +59,7 @@ function App() {
           <Home />
         </Route>
       </Switch>
+
     </div>
   );
 }
