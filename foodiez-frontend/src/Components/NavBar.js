@@ -2,16 +2,11 @@ import * as React from "react";
 import AppBar from "@mui/material/AppBar";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
-import IconButton from "@mui/material/IconButton";
-import MenuIcon from "@mui/icons-material/Menu";
 import SignUp from "./SignUp";
 // import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import authStore from "../Stores/authStore";
-import { useState } from "react";
-import { Box, Tabs, Link, Tab, Button } from "@material-ui/core";
-import Modal from "@mui/material/Modal";
-import { observer, Observer } from "mobx-react-lite";
+import { Box,  Button } from "@material-ui/core";
 
 // handleModal = () => {
 //   this.setState({modalIsOpen: !this.state.modalIsOpen});
