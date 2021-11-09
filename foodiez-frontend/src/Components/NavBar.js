@@ -13,16 +13,16 @@ function NavBar() {
       <header>
         <Link to="/">Home</Link>
 
-        {authStore.user === null ? (
+        {/* {authStore.user === null ? (
           <>
             <SignInModal /> <SignUpModal />
           </>
         ) : (
           <Button onClick={authStore.signOut}>
             SignOut
-          </Button>
-        )
-        }
+          </Button> */}
+        {/* )
+        } */}
       </header>
     </div>
   );
