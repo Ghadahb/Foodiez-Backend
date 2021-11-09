@@ -8,12 +8,8 @@ class CateStore {
     makeAutoObservable(this);
   }
 
-
-
-
   fetchCategory = async () => {
     try {
-        
       const res = await api.get("/category");
       console.log(res.data);
       this.categories = res.data;
@@ -30,10 +26,6 @@ class CateStore {
       console.log("catetStore -> createcategory -> error", error);
     }
   };
-
-
-
-
 }
 const cateStore = new CateStore();
 cateStore.fetchCategory();

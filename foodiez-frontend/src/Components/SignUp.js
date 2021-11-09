@@ -5,12 +5,9 @@ import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import { TextField } from "@mui/material";
-import { useFormControl } from "@mui/material/FormControl";
-import { spacing } from '@mui/system';
 import authStore from "../Stores/authStore";
-import { Link } from "react-router-dom";
-import SignUpButton from "./SignUpButton";
 import { observer } from "mobx-react";
+
 
 const style = {
   position: "absolute",
