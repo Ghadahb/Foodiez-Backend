@@ -1,24 +1,24 @@
-import React from "react";
-import { Button } from "@material-ui/core";
-import { Link } from "react-router-dom";
+// import React from "react";
+// import { Button } from "@material-ui/core";
+// import { Link } from "react-router-dom";
 
-function ButtonDemo() {
-  return (
-    <div>
-      <Button variant={"contained"} color={"primary"}>
-        SignUp
-      </Button>
-      <Link to="/">
-      <Button
-        variant={"contained"}
-        color={"primary"}
-      >
-      
-        SignIn
-      </Button>
-      </Link>
-    </div>
-  );
-}
+// function ButtonDemo() {
+//   return (
+//     <div>
+//       <Button variant={"contained"} color={"primary"}>
+//         SignUp
+//       </Button>
+//       <Link to="/">
+//       <Button
+//         variant={"contained"}
+//         color={"primary"}
+//       >
 
-export default ButtonDemo;
+//         SignIn
+//       </Button>
+//       </Link>
+//     </div>
+//   );
+// }
+
+// export default ButtonDemo;
