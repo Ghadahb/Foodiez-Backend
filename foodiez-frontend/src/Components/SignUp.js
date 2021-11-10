@@ -26,10 +26,11 @@ const style = {
 
 function SignUp () 
 {
+
   const [user, setUser] = useState({
     username: "",
     password: "",
-  });
+    });
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -43,8 +44,8 @@ function SignUp ()
 
 
     const handleChange = (event) =>
-      setUser({ ...user, [event.target.name]: event.target.value });
-
+      setUser ({ ...user, [event.target.name]: event.target.value });
+    
 
     return (
       <div>

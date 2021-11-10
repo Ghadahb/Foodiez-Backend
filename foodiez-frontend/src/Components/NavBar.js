@@ -7,21 +7,26 @@ import SignUp from "./SignUp";
 import SignIn from "./SignIn";
 import authStore from "../Stores/authStore";
 import { Box,  Button } from "@material-ui/core";
+import { observer } from "mobx-react";
 
 // handleModal = () => {
 //   this.setState({modalIsOpen: !this.state.modalIsOpen});
 // };
 
-export default function NavBar() {
+function NavBar() {
   return (
 
 
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color={"secondary"}>
-        {authStore.user === null ? (
+        {!authStore.user ? (
 
           <>
-            <SignIn /> <SignUp />
+         
+             <SignIn /> 
+           
+             <SignUp /> 
+            
           </>
         ) : (
 
@@ -49,3 +54,5 @@ export default function NavBar() {
 
   );
 }
+
+export default observer(NavBar);
