@@ -42,7 +42,10 @@ function CateDetail({ category }) {
           </CardContent>
         </CardActionArea>
         <CardActions>
-          <Button size="small" color="primary">
+          <Button s
+          ize="small" 
+          color="primary"
+          >
             Add Recipe
           </Button>
           <Button size="small" color="primary" >

@@ -9,23 +9,27 @@ import CateList from "./Components/CateList";
 import CateDetail from './Components/CateDetail'
 import RecipeList from "./Components/RecipeList";
 import RecipeCard from "./Components/RecipeCard";
-
-
+import CategorySearch from "./Components/CategorySearch"
+import "./App.css";
 
 function App() {
   return (
     <div>
+      <div className= "Navbar">
       <NavBar />
+      </div>
+      {/* <CategorySearch /> */}
 
       <Typography
         variant={"h4"}
         color={"primary"}
         align={"center"}
-        style={{ marginBottom: "50px" }}
+        style={{ marginBottom: "90px" }}
       >
         "A recipe has no soul. You, as the cook, must bring soul to the recipe."
       </Typography>
       <Home/>
+      <CateList />
       {/* <RecipeList/> */}
   
       <Switch>

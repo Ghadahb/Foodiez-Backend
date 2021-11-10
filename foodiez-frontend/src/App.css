@@ -45,3 +45,10 @@
   padding: 160px;
   
 }
+
+.Navbar {
+  display: flex;
+  align-items: left;
+  justify-content: space-evenly;
+
+}
