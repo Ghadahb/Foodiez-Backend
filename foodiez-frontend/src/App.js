@@ -7,6 +7,9 @@ import SignIn from "./Components/SignIn";
 import Home from "./Components/Home";
 import CateList from "./Components/CateList";
 import CateDetail from './Components/CateDetail'
+import RecipeList from "./Components/RecipeList";
+import RecipeCard from "./Components/RecipeCard";
+
 
 
 function App() {
@@ -22,26 +25,36 @@ function App() {
       >
         "A recipe has no soul. You, as the cook, must bring soul to the recipe."
       </Typography>
-      <Home />
+      <Home/>
+      {/* <RecipeList/> */}
+  
       <Switch>
-        <Route exact path="/recipes">
+        {/* <Route exact path="">
+        <Home />
+        </Route>  */}
+        {/* <Route exact path="/category/recipes">
           <CateDetail/>
-        </Route>
+        </Route> */}
         <Route path="/signup">
           <SignUp />
         </Route>
         <Route exact path="/signin">
           <SignIn />
         </Route>
-        {/* <Route path="/categories">
+        <Route path="/category/recipe">
+          <RecipeList/>
+          
+        </Route>
+        {/* <Route path="/category">
         <List
         data={categoryStore.Category}
         title="Categories"
-        />
-        </Route>
+        /> */}
+        {/* </Route>
         <Route exact path="/recipes">
           <Recipe />
-          </Route> */}
+          </Route> */} 
+         
       </Switch>
     </div>
   );

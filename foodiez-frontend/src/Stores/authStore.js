@@ -48,7 +48,8 @@ signOut = () => {
   signin = async (userData) => {
     try {
       const response = await api.post("/signin", userData);
-      this.user = decode(response.data.token);
+      console.log(response);
+      this.setUser(response.data.token);
   } catch (error) {
     console.log("AuthStore -> signin -> error", error);
   }
@@ -60,5 +61,5 @@ signOut = () => {
 
 
 const authStore = new AuthStore();
-// authStore.checkForToken();
+authStore.checkForToken();
 export default authStore;

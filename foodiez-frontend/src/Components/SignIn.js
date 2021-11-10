@@ -34,7 +34,7 @@ function SignIn() {
   const handleSubmit = (e) => {
     e.preventDefault();
     authStore.signin(user);
-    // closeModal();
+    handleClose();
   }
 
     const [open, setOpen] = React.useState(false);

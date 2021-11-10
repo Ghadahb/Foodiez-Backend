@@ -10,18 +10,23 @@ class CateStore {
 
   fetchCategory = async () => {
     try {
-      const res = await api.get("/category");
-      console.log(res.data);
+      const res = await api.get("/");
       this.categories = res.data;
     } catch (error) {
       console.error("catetStore -> fetchcategory -> error", error);
     }
   };
 
-  createCategory = async (category) => {
+  createCategory = async (newCategory) => {
+  
     try {
-      const res = await api.post("/category", category);
-      this.categories.push(res.data);
+      const formData = new FormData();
+   for (const key in newCategory) formData.append(key, newCategory[key]);
+   const res = await api.post("/", formData);
+   this.categories.push(res.data);
+      // const response = await api.post("/category", category);
+      // this.categories.push(res.data);
+    
     } catch (error) {
       console.log("catetStore -> createcategory -> error", error);
     }

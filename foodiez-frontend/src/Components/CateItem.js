@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import CateDetail from './CateDetail'
 import { observer } from "mobx-react";
 
-function CateItem({category}) {
+function CateItem ({category}) {
 //   const [newUser, setNewUser] = useState({ user: null });
 //   const [isOpen, setIsOpen] = useState(false);
 
