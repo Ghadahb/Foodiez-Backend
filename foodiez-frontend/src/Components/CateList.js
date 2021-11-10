@@ -5,6 +5,8 @@ import { observer } from "mobx-react";
 import { useState } from "react";
 import cateStore from "../Stores/cateStores";
 
+// REVIEW: Don't be lazy with the file and component names, should be CategoryList
+
 function CateList() {
   const [query, setQuery] = useState("");
 
@@ -14,11 +16,7 @@ function CateList() {
     // )
     .map((category) => <CateItem category={category} />);
 
-  return (
-    <div>
-      {cateList}
-    </div>
-  );
+  return <div>{cateList}</div>;
 }
 
 export default observer(CateList);

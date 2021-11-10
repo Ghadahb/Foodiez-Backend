@@ -6,7 +6,7 @@ import SignUp from "./SignUp";
 // import { Link } from "react-router-dom";
 import SignIn from "./SignIn";
 import authStore from "../Stores/authStore";
-import { Box,  Button } from "@material-ui/core";
+import { Box, Button } from "@material-ui/core";
 
 // handleModal = () => {
 //   this.setState({modalIsOpen: !this.state.modalIsOpen});
@@ -14,22 +14,15 @@ import { Box,  Button } from "@material-ui/core";
 
 export default function NavBar() {
   return (
-
-
     <Box sx={{ flexGrow: 1 }}>
       <AppBar position="static" color={"secondary"}>
+        {/* REVIEW: Instead of `authStore.user === null` change it to `!authStore.user` cleaner and simpler */}
         {authStore.user === null ? (
-
           <>
             <SignIn /> <SignUp />
           </>
         ) : (
-
-          <Button 
-          variant="contained" 
-          onClick={authStore.signOut}
-          
-          >
+          <Button variant="contained" onClick={authStore.signOut}>
             Signout
           </Button>
         )}
@@ -46,6 +39,5 @@ export default function NavBar() {
         </Toolbar>
       </AppBar>
     </Box>
-
   );
 }

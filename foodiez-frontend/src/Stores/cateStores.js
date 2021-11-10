@@ -1,6 +1,9 @@
 import { makeAutoObservable } from "mobx";
 import api from "./api";
 
+// REVIEW: Don't be lazy with file names, call it `categoryStore.js`
+// REVIEW: Don't be lazy with the class name, call it `CategoryStore`
+
 class CateStore {
   categories = [];
 
@@ -11,6 +14,7 @@ class CateStore {
   fetchCategory = async () => {
     try {
       const res = await api.get("/category");
+      // REVIEW: Remove console log if done with it
       console.log(res.data);
       this.categories = res.data;
     } catch (error) {
@@ -27,6 +31,7 @@ class CateStore {
     }
   };
 }
+// REVIEW: Don't be lazy with the instance name, call it `categoryStore`
 const cateStore = new CateStore();
 cateStore.fetchCategory();
 export default cateStore;
