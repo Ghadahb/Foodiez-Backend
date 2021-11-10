@@ -16,7 +16,7 @@ const style = {
   transform: "translate(-50%, -50%)",
   width: 400,
   bgcolor: "background.paper",
-  border: "4px solid #000",
+  border: "10px solid #000",
   boxShadow: 24,
   p: 7,
   mx: 'auto',
@@ -51,6 +51,9 @@ function SignIn() {
          onClick={handleOpen}
          variant= {"contained"}
          color={"secondary"}
+         style={{ backgroundColor: '#1e88e5' }}
+         
+         
         >Sign In
         </Button>
         <Modal
@@ -65,13 +68,18 @@ function SignIn() {
             id="modal-modal-title" 
             variant="h6" 
             component="h2" 
-            textAlign="left"
-            lineHeight="8"
+            textAlign="center"
+            lineHeight="2"
             style={{marginBottom: "20px"}}
             >
-              Sign In.
-              Please log-in.
-              </Typography>
+            Sign In
+             </Typography>
+             <Typography
+             lineHeight="3"
+             >
+ 
+             Please log-in.
+             </Typography>
             <form onSubmit={handleSubmit}>
               <TextField
                 onChange={handleChange}
@@ -99,6 +107,7 @@ function SignIn() {
               mx="auto"
               display="flex"
               style={{margin: "4px"}}
+              style={{ backgroundColor: '#1e88e5' }}
 
               >
                 Submit

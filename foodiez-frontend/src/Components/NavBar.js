@@ -15,23 +15,36 @@ import { observer } from "mobx-react";
 
 function NavBar() {
   return (
-
-
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" color={"secondary"}>
+      <AppBar 
+      position="static" 
+      color={"primary"}
+      style={{ backgroundColor: '#64b5f6' }}
+      
+      >
+      
+        <SignIn />
+        <SignUp />
+        
+
         {!authStore.user ? (
 
           <>
+         {/* <SignIn 
          
-             <SignIn /> 
+         /> 
            
-             <SignUp /> 
+           <SignUp />  */}
+             
             
           </>
         ) : (
 
           <Button 
           variant="contained" 
+          justify="space-between"
+        
+        
           onClick={authStore.signOut}
           
           >
@@ -39,7 +52,12 @@ function NavBar() {
           </Button>
         )}
         <Toolbar>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+          <Typography 
+          variant="h6" 
+          component="div" 
+          sx={{ flexGrow: 1 }}
+         
+          >
             Knights Kitchn
           </Typography>
           {/* <Link to="/signup">

@@ -11,15 +11,17 @@ import { TextField } from "@mui/material";
 
 
 const style = {
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translate(-50%, -50%)',
+  position: "absolute",
+  top: "50%",
+  left: "50%",
+  transform: "translate(-50%, -50%)",
   width: 400,
-  bgcolor: 'background.paper',
-  border: '2px solid #000',
+  bgcolor: "background.paper",
+  border: "10px solid #000",
   boxShadow: 24,
-  p: 4,
+  p: 7,
+  mx: 'auto',
+  m: 1,
 };
 
 export default function CategoryModal() {
@@ -47,12 +49,23 @@ export default function CategoryModal() {
 
   return (
     <div>
-      <Button onClick={handleOpen}> ADD CATEGORY </Button>
+      <Button 
+      onClick={handleOpen}
+      style={{ backgroundColor: '#1e88e5', marginBottom: "20px" }}
+      lineHeight="10"
+      marginBottom= "20px"
+      variant= {"contained"}
+      
+      
+      > 
+      ADD CATEGORY </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
+        border= "10px solid #000"
+        
       >
         <Box sx={style}>
           <Typography 
@@ -90,9 +103,13 @@ export default function CategoryModal() {
               mx="auto"
               display="flex"
               style={{margin: "4px"}}
+              style={{ backgroundColor: '#1e88e5' }}
+              style={{margin: "4px"}}
+              style={{ backgroundColor: '#1e88e5' }}
               >
                 Add Category
               </Button>
+              
               </form>
         </Box>
       </Modal>
