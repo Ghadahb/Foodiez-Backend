@@ -22,18 +22,22 @@ function CateList() {
   });
 
   return (
-    <div>
+    <center>
     <Autocomplete
       id="grouped-demo"
       options={options.sort((a, b) => -b.firstLetter.localeCompare(a.firstLetter))}
       groupBy={(option) => option.firstLetter}
       getOptionLabel={(option) => option.title}
       sx={{ width: 300 }}
-      renderInput={(params) => <TextField {...params} label="Category Option" />}
+      renderInput={(params) => <TextField {...params} 
+      label="Category Option" 
+      style={{marginBottom: "40px"}}
+      style={{marginTop: "20px"}}
+      />}
     />
     <CategoryModal />
     {cateList}
-    </div>
+    </center>
   );
 }
 
@@ -51,7 +55,7 @@ const categories = [
   { title: "Asian" },
   { title: "Bakery" },
   { title: "Kuwaiti" },
-  { title: "Asian" },
+  { title: "Persian" },
   { title: "Brunch" },
   
   

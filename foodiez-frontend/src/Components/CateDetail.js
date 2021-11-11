@@ -13,26 +13,43 @@ import RecipeList from "./RecipeList";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 345,
+    maxWidth: 400,
   },
   media: {
-    height: 140,
+    height: 200,
   },
+  paddingTop: 65
+ 
+  // align: {
+  //   center: align
+  // },
+  // style: {
+  //   marginBottom: "70px" 
+  // },
+
+ 
 });
 
 function CateDetail({ category }) {
     const classes = useStyles();
 
     return (
-      <Link to="/recipes"> 
+      
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
             className={classes.media}
             image={category.image}
             title="Contemplative Reptile"
+            align={"center"}
+        style={{ marginBottom: "70px" }}
+        style={{ marginTop: "100px" }}
+        
+        
+  
           />
           <CardContent>
+          
             <Typography gutterBottom variant="h5" component="h2">
               {category.name}
             </Typography>
@@ -45,6 +62,10 @@ function CateDetail({ category }) {
           <Button s
           ize="small" 
           color="primary"
+          align= "center"
+          // variant= {"contained"}
+          textAlign="center"
+          lineHeight="2"
           >
             Add Recipe
           </Button>
@@ -53,8 +74,10 @@ function CateDetail({ category }) {
           </Button>
         </CardActions>
       </Card>
+
+    
       
-      </Link>
+    
       
     );
   }

@@ -7,11 +7,11 @@ import RecipeCard from './RecipeCard';
 function Home() {
     return (
         <div>
-            <Link to="">
+            {/* <Link to="">
             <h1
             textalign="center"
             >  ♞ </h1>
-            </Link>
+            </Link> */}
 
            
            {/* <RecipeList /> */}
