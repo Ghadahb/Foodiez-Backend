@@ -116,4 +116,3 @@ function SignUp() {
   export default observer(SignUp);
 
 
-export default observer(SignUp);

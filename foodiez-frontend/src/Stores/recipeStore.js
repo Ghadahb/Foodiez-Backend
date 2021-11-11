@@ -35,3 +35,11 @@ class RecipeStore{
 const recipeStore = new RecipeStore();
 recipeStore.fetchRecipes();
 export default recipeStore;
+
+{/* <Route path="/category/recipes/:recipesSlug">
+<RecipeCard />
+</Route>
+<Route path="/category/:categorySlug">
+<CateItem />
+
+</Route> */}

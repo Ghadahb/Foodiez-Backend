@@ -1,31 +1,20 @@
+import { Switch, Typography } from "@material-ui/core";
 import { observer } from "mobx-react";
 import NavBar from "./Components/NavBar";
 import SignUp from "./Components/SignUp";
-import { Switch, Route } from "react-router";
+import { Route } from "react-router";
 import SignIn from "./Components/SignIn";
 import Home from "./Components/Home";
 import CateList from "./Components/CateList";
-
-import RecipeCard from "./Components/RecipeCard";
 import CateItem from "./Components/CateItem";
-
-import CateDetail from "./Components/CateDetail";
 import RecipeList from "./Components/RecipeList";
 import RecipeCard from "./Components/RecipeCard";
 import CategorySearch from "./Components/CategorySearch";
 import "./App.css";
 import { withStyles } from "@material-ui/core/styles";
-
-
 function App() {
   return (
     <div>
-
-      <NavBar />
-      <Home />
-      {/* <RecipeList /> */}
-      <CateList />
-
       <div className="Navbar">
         <NavBar />
       </div>
@@ -64,44 +53,23 @@ function App() {
         Join Our Community
       </Typography>
       <Home />
-      <CateList />
-      {/* <RecipeList/> */}
-
-
+      <CateList/>
       <Switch>
-      <Route path="/category/recipes/:recipesSlug">
-            <RecipeCard />
-          </Route>
         <Route path="/category/:categorySlug">
           <CateItem />
-
         </Route>
-
-        {/* <Route path="/category/recipes">
-          <RecipeList />
-        </Route> */}
-
         <Route path="/signup">
           <SignUp />
         </Route>
-        <Route path="/signin">
+        <Route exact path="/signin">
           <SignIn />
         </Route>
-
-
-        <Route path="/category/recipe">
+        <Route path="/cateory/:categorySlug/recipes">
           <RecipeList />
         </Route>
-        {/* <Route path="/category">
-        <List
-        data={categoryStore.Category}
-        title="Categories"
-        /> */}
-        {/* </Route>
-        <Route exact path="/recipes">
-          <Recipe />
-          </Route> */}
-
+        {/* <Route path="/category/:categorySlug">
+          <CateItem />
+        </Route> */}
       </Switch>
     </div>
   );

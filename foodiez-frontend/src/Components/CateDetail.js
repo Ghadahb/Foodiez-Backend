@@ -20,31 +20,62 @@ const useStyles = makeStyles({
   media: {
     height: 200,
   },
-  paddingTop: 65
- 
+  paddingTop: 65,
+
   // align: {
   //   center: align
   // },
   // style: {
-  //   marginBottom: "70px" 
+  //   marginBottom: "70px"
   // },
-
- 
 });
 
-function CateDetail({category}) {
+function CateDetail({ category }) {
   const classes = useStyles();
 
+  //   return (
+  //     <Card className={classes.root}>
+  //       <CardActionArea>
+  //         <Link to={`/category/${category.slug}`}>
+  //         <CardMedia
+  //           className={classes.media}
+  //           image={category.image}
+  //           title="Contemplative Reptile"
+  //         /></Link>
+  //         <CardContent>
+  //           <Typography gutterBottom variant="h5" component="h2">
+  //             {category.name}
+  //           </Typography>
+  //           <Typography variant="body2" color="textSecondary" component="p">
+  //             {category.slug}
+  //           </Typography>
+  //         </CardContent>
+  //       </CardActionArea>
+  //       <CardActions>
+  //         <Button s ize="small" color="primary">
+  //           Add Recipe
+  //         </Button>
+  //         <Button size="small" color="primary">
+  //           Learn More
+  //         </Button>
+  //       </CardActions>
+  //     </Card>
+  //   );
+  // }
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
         <Link to={`/category/${category.slug}`}>
-        <CardMedia
-          className={classes.media}
-          image={category.image}
-          title="Contemplative Reptile"
-        /></Link>
+          <CardMedia
+            className={classes.media}
+            image={category.image}
+            title="Contemplative Reptile"
+            align={"center"}
+            style={{ marginBottom: "70px" }}
+            style={{ marginTop: "100px" }}
+          />
+        </Link>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {category.name}
@@ -55,7 +86,15 @@ function CateDetail({category}) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button s ize="small" color="primary">
+        <Button
+          s
+          ize="small"
+          color="primary"
+          align="center"
+          // variant= {"contained"}
+          textAlign="center"
+          lineHeight="2"
+        >
           Add Recipe
         </Button>
         <Button size="small" color="primary">
@@ -66,55 +105,6 @@ function CateDetail({category}) {
   );
 }
 
-    return (
-      
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={category.image}
-            title="Contemplative Reptile"
-            align={"center"}
-        style={{ marginBottom: "70px" }}
-        style={{ marginTop: "100px" }}
-        
-        
-  
-          />
-          <CardContent>
-          
-            <Typography gutterBottom variant="h5" component="h2">
-              {category.name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            {category.slug}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button s
-          ize="small" 
-          color="primary"
-          align= "center"
-          // variant= {"contained"}
-          textAlign="center"
-          lineHeight="2"
-          >
-            Add Recipe
-          </Button>
-          <Button size="small" color="primary" >
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
-
-    
-      
-    
-      
-    );
-  }
-  
 //   The duration of the category in months, Users that joined this category, Start date, End date,
 // The user who created the category
 export default observer(CateDetail);

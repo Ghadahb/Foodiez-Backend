@@ -6,6 +6,7 @@ import Modal from "@mui/material/Modal";
 import { useState } from "react";
 import cateStores from "../Stores/cateStores";
 import { TextField } from "@mui/material";
+import { Link } from "react-router-dom";
 
 const style = {
   position: "absolute",
@@ -76,6 +77,7 @@ export default function CategoryModal() {
               required
               onChange={handleChange}
             />
+            {/* <Link to={`/categoory/${category.slug}/recipes`}> */}
             <TextField
               name="image"
               type="file"
@@ -83,6 +85,7 @@ export default function CategoryModal() {
               color="secondary"
               onChange={handleImage}
             />
+            {/* </Link> */}
             <Button
               onClose={handleClose}
               type="submit"
