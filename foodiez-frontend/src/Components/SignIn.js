@@ -51,8 +51,8 @@ function SignIn() {
          onClick={handleOpen}
          variant= {"contained"}
          color={"secondary"}
-         style={{ backgroundColor: '#1e88e5' }}
-         
+         style={{ backgroundColor: '#1e88e5', marginTop: "10px" }}
+
          
         >Sign In
         </Button>
@@ -71,6 +71,7 @@ function SignIn() {
             textAlign="center"
             lineHeight="2"
             style={{marginBottom: "20px"}}
+
             >
             Sign In
              </Typography>

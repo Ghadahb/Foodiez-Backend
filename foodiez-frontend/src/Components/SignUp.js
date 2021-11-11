@@ -53,7 +53,8 @@ function SignUp ()
         onClick={handleOpen}
         variant= {"contained"}
         color={"secondary"}
-        style={{ backgroundColor: '#1e88e5' }}
+        style={{ backgroundColor: '#1e88e5', margin: "10px 0px" }}
+        
         
         
         >Sign Up
@@ -108,8 +109,8 @@ function SignUp ()
               variant="contained"
               mx="auto"
               display="flex"
-              style={{margin: "4px"}}
-              style={{ backgroundColor: '#1e88e5' }}
+              style={{margin: "4px", backgroundColor: '#1e88e5'}}
+              // style={{ backgroundColor: '#1e88e5' }}
               >
                 Submit
               </Button>
