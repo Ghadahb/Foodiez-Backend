@@ -2,6 +2,7 @@ import React from "react";
 import { Typography } from "@material-ui/core";
 
 function Home() {
+
   return (
     <>
       <Typography
@@ -13,6 +14,15 @@ function Home() {
         "A recipe has no soul. You, as the cook, must bring soul to the recipe."
       </Typography>
       <h1 textalign="center"> ♞ </h1>
+
+    return (
+        <div>
+            {/* <Link to="">
+            <h1
+            textalign="center"
+            >  ♞ </h1>
+            </Link> */}
+
 
       {/* <RecipeList /> */}
     </>

@@ -46,9 +46,25 @@
   
 }
 
-.Navbar {
+/* .Navbar {
   display: flex;
   align-items: left;
   justify-content: space-evenly;
 
+} */
+
+/* .MuiImageList-root {
+  overflow-y: inherit !important;
 }
+.MuiImageListItemBar-titleWrap {
+  text-align: initial !important;
+}
+.MuiButtonBase-root {
+  
+  font-size: 14px !important;
+  border-radius: 6px !important;
+  padding: 7px !important;
+  background: #79798d !important;
+  overflow: visible;
+  margin-right: 10px !important;
+}  */

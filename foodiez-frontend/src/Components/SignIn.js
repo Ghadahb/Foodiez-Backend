@@ -41,31 +41,36 @@ function SignIn() {
   const handleChange = (event) =>
     setUser({ ...user, [event.target.name]: event.target.value });
 
-  return (
-    <div>
-      <Button
-        onClick={handleOpen}
-        variant={"contained"}
-        color={"secondary"}
-        style={{ backgroundColor: "#1e88e5" }}
-      >
-        Sign In
-      </Button>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
-      >
-        <Box sx={style}>
-          <Typography
-            id="modal-modal-title"
-            variant="h6"
-            component="h2"
+
+    return (
+      <div>
+        <Button
+         onClick={handleOpen}
+         variant= {"contained"}
+         color={"secondary"}
+         style={{ backgroundColor: '#1e88e5', marginTop: "10px" }}
+
+         
+        >Sign In
+        </Button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+          
+        >
+          <Box sx={style}>
+            <Typography 
+            id="modal-modal-title" 
+            variant="h6" 
+            component="h2" 
             textAlign="center"
             lineHeight="2"
-            style={{ marginBottom: "20px" }}
-          >
+            style={{marginBottom: "20px"}}
+
+            >
+
             Sign In
           </Typography>
           <Typography lineHeight="3">Please log-in.</Typography>
