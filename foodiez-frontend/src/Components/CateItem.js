@@ -1,28 +1,21 @@
 import React, { useState } from "react";
-import CateDetail from './CateDetail'
+import CateDetail from "./CateDetail";
 import { observer } from "mobx-react";
+import cateStores from "../Stores/cateStores";
+import { useParams } from "react-router";
+import recipeStore from "../Stores/recipeStore";
+import RecipeCard from "./RecipeCard";
 
-function CateItem ({category}) {
-//   const [newUser, setNewUser] = useState({ user: null });
-//   const [isOpen, setIsOpen] = useState(false);
-
-//   const closeModal = () => setIsOpen(false);
-
-//   const openModal = () => setIsOpen(true);
-
-//   const handleDelete = () => {
-//     cateStore.deleteJam3ya(category._id);
-//   };
-
-//   const handleJoin = () => {
-//     cateStore.joinJam3ya(category._id, newUser);
-//   };
+function CateItem() {
+  const { categorySlug } = useParams();
+  const category = cateStores.categories.find(
+    (category) => category.slug === categorySlug
+  );
 
   return (
-    <div >
-        <CateDetail category={category}/>
-     {/* <p>{category.name}</p> */}
-     
+    <div>
+      {category.name}
+      {category.recipes}
     </div>
   );
 }

@@ -12,6 +12,7 @@ import { useParams } from "react-router";
 import cateStores from "../Stores/cateStores";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
+import recipeStore from "../Stores/recipeStore";
 
 const useStyles = makeStyles({
   root: {
@@ -22,24 +23,24 @@ const useStyles = makeStyles({
   },
 });
 
-function CateDetail({category}) {
+function RecipeItem({recipe}) {
   const classes = useStyles();
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link to={`/category/${category.slug}`}>
+        <Link to={`/category/:categoryId/recipes/${recipe.slug}`}>
         <CardMedia
           className={classes.media}
-          image={category.image}
+          image={recipe.image}
           title="Contemplative Reptile"
         /></Link>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {category.name}
+            {recipe.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {category.slug}
+            {recipe.slug}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -56,4 +57,4 @@ function CateDetail({category}) {
 }
 //   The duration of the category in months, Users that joined this category, Start date, End date,
 // The user who created the category
-export default observer(CateDetail);
+export default observer(RecipeItem);

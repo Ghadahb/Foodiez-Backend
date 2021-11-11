@@ -1,18 +1,17 @@
-import React from 'react';
+import React from "react";
 import { Redirect, useParams } from "react-router";
-import cateStores from '../Stores/cateStores';
+import cateStores from "../Stores/cateStores";
 
-const CateDetails = () => {
-    const { categorySlug } = useParams();
-    const category = cateStores.categories.find((category) => category.slug === categorySlug);
-    if (!category) return <Redirect to="/category" />;
+function CateDetails ()  {
 
-    return (
-        <div className="detail">
+  return (
+    <div className="detail">
+      <Link to="/category/recipes">
         <img className="detail-img" src={category.image} alt={category.name} />
         <h2 className="title">{category.name}</h2>
-     </div>
-    );
+      </Link>
+    </div>
+  );
 };
 
-export default CateDetails
+export default CateDetails;

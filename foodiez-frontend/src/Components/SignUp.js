@@ -8,7 +8,6 @@ import { TextField } from "@mui/material";
 import authStore from "../Stores/authStore";
 import { observer } from "mobx-react";
 
-
 const style = {
   position: "absolute",
   top: "50%",
@@ -19,106 +18,92 @@ const style = {
   border: "10px solid #000",
   boxShadow: 24,
   p: 7,
-  mx: 'auto',
+  mx: "auto",
   m: 1,
-
 };
 
-function SignUp () 
-{
-
+function SignUp() {
   const [user, setUser] = useState({
     username: "",
     password: "",
-    });
+  });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     authStore.signup(user);
     handleClose();
-  }
+  };
 
-    const [open, setOpen] = React.useState(false);
-    const handleOpen = () => setOpen(true);
-    const handleClose = () => setOpen(false);
+  const [open, setOpen] = React.useState(false);
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
+  const handleChange = (event) =>
+    setUser({ ...user, [event.target.name]: event.target.value });
 
-    const handleChange = (event) =>
-      setUser ({ ...user, [event.target.name]: event.target.value });
-    
-
-    return (
-      <div>
-        <Button 
+  return (
+    <div>
+      <Button
         onClick={handleOpen}
-        variant= {"contained"}
+        variant={"contained"}
         color={"secondary"}
-        style={{ backgroundColor: '#1e88e5' }}
-        
-        
-        >Sign Up
-        </Button>
-        <Modal
-          open={open}
-          onClose={handleClose}
-          aria-labelledby="modal-modal-title"
-          aria-describedby="modal-modal-description"
-          
-        >
-          <Box sx={style}>
-            <Typography 
-            id="modal-modal-title" 
-            variant="h6" 
-            component="h2" 
+        style={{ backgroundColor: "#1e88e5" }}
+      >
+        Sign Up
+      </Button>
+      <Modal
+        open={open}
+        onClose={handleClose}
+        aria-labelledby="modal-modal-title"
+        aria-describedby="modal-modal-description"
+      >
+        <Box sx={style}>
+          <Typography
+            id="modal-modal-title"
+            variant="h6"
+            component="h2"
             textAlign="center"
             lineHeight="2"
-            style={{marginBottom: "20px"}}
-            >
-           Sign Up
-            </Typography>
-            <Typography
-            lineHeight="3"
-            >
-
-            Create your account.
-            </Typography>
-            <form onSubmit={handleSubmit}>
-              <TextField
-                label="username"
-                name="username"
+            style={{ marginBottom: "20px" }}
+          >
+            Sign Up
+          </Typography>
+          <Typography lineHeight="3">Create your account.</Typography>
+          <form onSubmit={handleSubmit}>
+            <TextField
+              label="username"
+              name="username"
               // value={user.username}
-                variant="outlined"
-                color="secondary"
-                required
-                onChange={handleChange}
-              />
-              <TextField
-                label="password"
-                name="password"
-                // value={user.password}
-                variant="outlined"
-                color="secondary"
-                required
-                onChange={handleChange}
-              />
-              <Button
+              variant="outlined"
+              color="secondary"
+              required
+              onChange={handleChange}
+            />
+            <TextField
+              label="password"
+              name="password"
+              // value={user.password}
+              variant="outlined"
+              color="secondary"
+              required
+              onChange={handleChange}
+            />
+            <Button
               onClose={handleClose}
-              type="submit" 
-              color="secondary" 
+              type="submit"
+              color="secondary"
               variant="contained"
               mx="auto"
               display="flex"
-              style={{margin: "4px"}}
-              style={{ backgroundColor: '#1e88e5' }}
-              >
-                Submit
-              </Button>
-            </form>
-          </Box>
-        </Modal>
-      </div>
-    );
-  };
+              style={{ margin: "4px", backgroundColor: "#1e88e5" }}
+            >
+              Submit
+            </Button>
+          </form>
+        </Box>
+      </Modal>
+    </div>
+  );
+}
 
-  export default observer(SignUp);
-
+export default observer(SignUp);
