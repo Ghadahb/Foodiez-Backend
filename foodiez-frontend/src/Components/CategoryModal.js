@@ -1,14 +1,11 @@
-import * as React from 'react';
-import Box from '@mui/material/Box';
-import Button from '@mui/material/Button';
-import Typography from '@mui/material/Typography';
-import Modal from '@mui/material/Modal';
-import { useState } from 'react';
+import * as React from "react";
+import Box from "@mui/material/Box";
+import Button from "@mui/material/Button";
+import Typography from "@mui/material/Typography";
+import Modal from "@mui/material/Modal";
+import { useState } from "react";
 import cateStores from "../Stores/cateStores";
-import { Category } from '@material-ui/icons';
-import authStore from '../Stores/authStore';
 import { TextField } from "@mui/material";
-
 
 const style = {
   position: "absolute",
@@ -20,7 +17,7 @@ const style = {
   border: "10px solid #000",
   boxShadow: 24,
   p: 7,
-  mx: 'auto',
+  mx: "auto",
   m: 1,
 };
 
@@ -33,7 +30,6 @@ export default function CategoryModal() {
     name: "",
     image: "",
   });
-  
 
   const handleChange = (event) =>
     setCategory({ ...category, [event.target.name]: event.target.value });
@@ -49,68 +45,56 @@ export default function CategoryModal() {
 
   return (
     <div>
-      <Button 
-      onClick={handleOpen}
-      style={{ backgroundColor: '#1e88e5', marginBottom: "20px" }}
-      lineHeight="10"
-      marginBottom= "20px"
-      variant= {"contained"}
-      
-      
-      > 
-      ADD CATEGORY </Button>
+      <Button
+        onClick={handleOpen}
+        style={{ backgroundColor: "#1e88e5", marginBottom: "20px" }}
+        lineHeight="10"
+        marginBottom="20px"
+        variant={"contained"}
+      >
+        ADD CATEGORY{" "}
+      </Button>
       <Modal
         open={open}
         onClose={handleClose}
         aria-labelledby="modal-modal-title"
         aria-describedby="modal-modal-description"
-        border= "10px solid #000"
-        
+        border="10px solid #000"
       >
         <Box sx={style}>
-          <Typography 
-          id="modal-modal-title" 
-          variant="h6" 
-          component="h2"
-          >
-        Add Category
-    </Typography>
-          
+          <Typography id="modal-modal-title" variant="h6" component="h2">
+            Add Category
+          </Typography>
+
           <form onSubmit={handleSubmit}>
-              <TextField
-                label="Name of Category"
-                name="name"
-                type = "text"
-                variant="outlined"
-                color="secondary"
-                required
-                onChange={handleChange}
-              />
-               <TextField
-                label="Image"
-                name="image"
-                type="file"
-                variant="outlined"
-                color="secondary"
-                
-                onChange={handleImage}
-              />
-               <Button
+            <TextField
+              label="Name of Category"
+              name="name"
+              type="text"
+              variant="outlined"
+              color="secondary"
+              required
+              onChange={handleChange}
+            />
+            <TextField
+              name="image"
+              type="file"
+              variant="outlined"
+              color="secondary"
+              onChange={handleImage}
+            />
+            <Button
               onClose={handleClose}
-              type="sumit" 
-              color="secondary" 
+              type="submit"
+              color="secondary"
               variant="contained"
               mx="auto"
               display="flex"
-              style={{margin: "4px"}}
-              style={{ backgroundColor: '#1e88e5' }}
-              style={{margin: "4px"}}
-              style={{ backgroundColor: '#1e88e5' }}
-              >
-                Add Category
-              </Button>
-              
-              </form>
+              style={{ margin: "4px", backgroundColor: "#1e88e5" }}
+            >
+              Add Category
+            </Button>
+          </form>
         </Box>
       </Modal>
     </div>

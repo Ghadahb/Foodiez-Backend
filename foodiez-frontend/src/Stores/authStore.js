@@ -1,6 +1,5 @@
 import { makeAutoObservable } from "mobx";
 import api from "./api";
-import React from "react";
 import decode from "jwt-decode";
 
 class AuthStore {

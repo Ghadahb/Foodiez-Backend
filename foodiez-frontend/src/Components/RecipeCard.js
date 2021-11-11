@@ -1,14 +1,17 @@
 import React from "react";
-import { makeStyles } from '@material-ui/core/styles';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import CardMedia from '@material-ui/core/CardMedia';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from "@material-ui/core/styles";
+import Card from "@material-ui/core/Card";
+import CardActionArea from "@material-ui/core/CardActionArea";
+import CardActions from "@material-ui/core/CardActions";
+import CardContent from "@material-ui/core/CardContent";
+import CardMedia from "@material-ui/core/CardMedia";
+import Button from "@material-ui/core/Button";
+import Typography from "@material-ui/core/Typography";
 import { observer } from "mobx-react";
 import recipeStore from "../Stores/recipeStore";
+import { useParams } from "react-router";
+
+
 
 const useStyles = makeStyles({
   root: {
@@ -19,11 +22,15 @@ const useStyles = makeStyles({
   },
 });
 
-function RecipeCard({ recipe }) {
-    const classes = useStyles();
-    const handleDelete = () => recipeStore.deleteRecipe(recipe._id);
+function RecipeCard() {
+  const classes = useStyles();
+  const { recipeSlug } = useParams();
+  const recipe = recipeStore.recipes.find(
+    (recipe) => recipe.slug === recipeSlug
+  );
 
-    return (
+  return (
+    <div>
       <Card className={classes.root}>
         <CardActionArea>
           <CardMedia
@@ -36,7 +43,7 @@ function RecipeCard({ recipe }) {
               {recipe.name}
             </Typography>
             <Typography variant="body2" color="textSecondary" component="p">
-            {recipe.slug}
+              {recipe.slug}
             </Typography>
           </CardContent>
         </CardActionArea>
@@ -44,13 +51,16 @@ function RecipeCard({ recipe }) {
           <Button size="small" color="primary">
             Add Recipe
           </Button>
-          <Button size="small" color="primary" >
+          <Button size="small" color="primary">
             Learn More
           </Button>
         </CardActions>
       </Card>
-    );
-  }
+
+
+    </div>
+  );
+}
 //   The duration of the category in months, Users that joined this category, Start date, End date,
 // The user who created the category
 export default observer(RecipeCard);

@@ -12,45 +12,35 @@ import { useParams } from "react-router";
 import cateStores from "../Stores/cateStores";
 import { Redirect } from "react-router";
 import { Link } from "react-router-dom";
+import recipeStore from "../Stores/recipeStore";
 
 const useStyles = makeStyles({
   root: {
-    maxWidth: 400,
+    maxWidth: 345,
   },
   media: {
-    height: 200,
+    height: 140,
   },
-  paddingTop: 65
- 
-  // align: {
-  //   center: align
-  // },
-  // style: {
-  //   marginBottom: "70px" 
-  // },
-
- 
 });
 
-function CateDetail({category}) {
+function RecipeItem({recipe}) {
   const classes = useStyles();
-
 
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link to={`/category/${category.slug}`}>
+        <Link to={`/category/:categoryId/recipes/${recipe.slug}`}>
         <CardMedia
           className={classes.media}
-          image={category.image}
+          image={recipe.image}
           title="Contemplative Reptile"
         /></Link>
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
-            {category.name}
+            {recipe.name}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
-            {category.slug}
+            {recipe.slug}
           </Typography>
         </CardContent>
       </CardActionArea>
@@ -65,56 +55,6 @@ function CateDetail({category}) {
     </Card>
   );
 }
-
-    return (
-      
-      <Card className={classes.root}>
-        <CardActionArea>
-          <CardMedia
-            className={classes.media}
-            image={category.image}
-            title="Contemplative Reptile"
-            align={"center"}
-        style={{ marginBottom: "70px" }}
-        style={{ marginTop: "100px" }}
-        
-        
-  
-          />
-          <CardContent>
-          
-            <Typography gutterBottom variant="h5" component="h2">
-              {category.name}
-            </Typography>
-            <Typography variant="body2" color="textSecondary" component="p">
-            {category.slug}
-            </Typography>
-          </CardContent>
-        </CardActionArea>
-        <CardActions>
-          <Button s
-          ize="small" 
-          color="primary"
-          align= "center"
-          // variant= {"contained"}
-          textAlign="center"
-          lineHeight="2"
-          >
-            Add Recipe
-          </Button>
-          <Button size="small" color="primary" >
-            Learn More
-          </Button>
-        </CardActions>
-      </Card>
-
-    
-      
-    
-      
-    );
-  }
-  
 //   The duration of the category in months, Users that joined this category, Start date, End date,
 // The user who created the category
-export default observer(CateDetail);
+export default observer(RecipeItem);

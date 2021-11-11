@@ -22,7 +22,7 @@ class RecipeStore{
     try {
       const formData = new FormData();
       for (const key in newRecipe) formData.append(key, newRecipe[key]);
-      const res = await api.post("/category/recipes", formData);
+      const res = await api.post("/category/:categoryId/recipes", formData);
       this.recipes.push(res.data);
 
       // const res = await api.post("/recipes", recipes);
