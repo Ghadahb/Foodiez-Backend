@@ -8,9 +8,9 @@ class RecipeStore{
     makeAutoObservable(this);
   }
 
-  fetchRecipes = async () => {
+  fetchRecipes = async (categoryId) => {
     try {
-      const res = await api.get("/category/recipes");
+      const res = await api.get(`/category/:${categoryId}`);
       this.recipes = res.data;
     } catch (error) {
       console.error("catetStore -> fetchrecipes -> error", error);

@@ -52,11 +52,10 @@ function App() {
       >
         Join Our Community
       </Typography>
-      <Home />
-      <CateList/>
+
       <Switch>
         <Route path="/category/:categorySlug">
-          <CateItem />
+          <RecipeList />
         </Route>
         <Route path="/signup">
           <SignUp />
@@ -70,6 +69,10 @@ function App() {
         {/* <Route path="/category/:categorySlug">
           <CateItem />
         </Route> */}
+        <Route path="">
+          <Home />
+          <CateList />
+        </Route>
       </Switch>
     </div>
   );

@@ -66,16 +66,15 @@ function CateDetail({ category }) {
   return (
     <Card className={classes.root}>
       <CardActionArea>
-        <Link to={`/category/${category.slug}`}>
-          <CardMedia
-            className={classes.media}
-            image={category.image}
-            title="Contemplative Reptile"
-            align={"center"}
-            style={{ marginBottom: "70px" }}
-            style={{ marginTop: "100px" }}
-          />
-        </Link>
+        <CardMedia
+          className={classes.media}
+          image={category.image}
+          title="Contemplative Reptile"
+          align={"center"}
+          style={{ marginBottom: "70px" }}
+          style={{ marginTop: "100px" }}
+        />
+
         <CardContent>
           <Typography gutterBottom variant="h5" component="h2">
             {category.name}
@@ -86,17 +85,19 @@ function CateDetail({ category }) {
         </CardContent>
       </CardActionArea>
       <CardActions>
-        <Button
-          s
-          ize="small"
-          color="primary"
-          align="center"
-          // variant= {"contained"}
-          textAlign="center"
-          lineHeight="2"
-        >
-          Add Recipe
-        </Button>
+        <Link to={`/api/category/${category.slug}`}>
+          <Button
+            s
+            ize="small"
+            color="primary"
+            align="center"
+            // variant= {"contained"}
+            textAlign="center"
+            lineHeight="2"
+          >
+            Add Recipe
+          </Button>
+        </Link>
         <Button size="small" color="primary">
           Learn More
         </Button>
